@@ -1,44 +1,46 @@
-.SignUp{
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
+.SignUpSection {
+  background-color: black;
+  height: 91vh;
 }
-.SignUp h1{
-    margin-top: 30px;
-    margin-bottom: 15px;
+.SignUpSection .SignUp {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
 }
-.SignUp form{
-    width: 22%;
-    background-color: #090909;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
-    border-radius: 20px;
-    margin-bottom: 30px;
+.SignUpSection .SignUp h1 {
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
-.SignUp form input{
-    background-color: black;
-    border: 0.5px solid #F2D3D3;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    color: white;
+.SignUpSection .SignUp form {
+  width: 22%;
+  background-color: #090909;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+.SignUpSection .SignUp form input {
+  background-color: black;
+  border: 0.5px solid #F2D3D3;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  color: white;
+}
+.SignUpSection .SignUp form input:focus {
+  outline: 0;
+}
+.SignUpSection .SignUp form button {
+  margin-top: 20px;
+  background-color: #F2D3D3;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.SignUpSection .SignUp form label:first-child {
+  margin-top: 15px;
 }
 
-.SignUp form input:focus{
-    outline: 0;
-}
-
-.SignUp form button{
-    margin-top: 20px;
-    background-color: #F2D3D3;
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 30px;
-}
-
-.SignUp form label:first-child{
-    margin-top: 15px;
-}
+/*# sourceMappingURL=signup.css.map */

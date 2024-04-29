@@ -38,23 +38,25 @@ function SignIn() {
     return (
         <>
           <NavBar />
-          <Container className='SignInContainer'>
-            <Row>
-              <Col lg={6} className='SignIn'>
-                <h1 className='lancelot rose-text long-size'>Caroline's Place</h1>
-                <form onSubmit={handleSignIn} className='koulen rose-text'>
-                  <label className='tiny-size' htmlFor='email'>EMAIL</label>
-                  <input type='text' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
-                  <label className='tiny-size' htmlFor='password'>PASSWORD</label>
-                  <input type='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} />
-                  <span><button type='submit' className='medium-size'>SIGN IN</button></span>
-                </form>
-              </Col>
-              <Col lg={6} className='SignInImg'>
-                <img src={PolachekSignIn} alt='PolachekSignIn' />
-              </Col>
-            </Row>
-          </Container>
+          <section className='signInSection'>
+            <Container className='SignInContainer'>
+              <Row>
+                <Col lg={6} className='SignIn'>
+                  <h1 className='lancelot rose-text long-size'>Caroline's Place</h1>
+                  <form onSubmit={handleSignIn} className='koulen rose-text'>
+                    <label className='tiny-size' htmlFor='email'>EMAIL</label>
+                    <input type='text' id='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <label className='tiny-size' htmlFor='password'>PASSWORD</label>
+                    <input type='password' id='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <span><button type='submit' className='medium-size'>SIGN IN</button></span>
+                  </form>
+                </Col>
+                <Col lg={6} className='SignInImg'>
+                  <img src={PolachekSignIn} alt='PolachekSignIn' />
+                </Col>
+              </Row>
+            </Container>
+          </section>
         </>
       );
     }

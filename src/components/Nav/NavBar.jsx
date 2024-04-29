@@ -7,23 +7,25 @@ import CarolinesLogo from './PolachekLogo.png'
 
 function NavBar() {
   return (
-    <Container>
-      <Row className='nav-navBar'>
-        <Col lg={2} className='nav-col'>
-          <a href="/"><img src={CarolinesLogo} alt="Carolines Logo" /></a>
-        </Col>
-        <Col lg={8} className='lancelot nav-col medium-size'>
-          <a href="">Tops</a>
-          <a href="">Bottoms</a>
-          <a href="">Shoes</a>
-          <a href="">Accesories</a>
-        </Col>
-        <Col lg={2} className='nav-col small-size'>
-          <a href="/SignIn">Sign in</a> 
-          <a href="/SignUp">Sign up</a>
-        </Col>
-      </Row>
-    </Container>
+    <section className='navBar'>
+      <Container>
+        <Row className='navBar-row'>
+          <Col lg={2} className='nav-col'>
+            <a href="/"><img src={CarolinesLogo} alt="Carolines Logo" /></a>
+          </Col>
+          <Col lg={8} className='lancelot nav-col medium-size'>
+            <a href="">Tops</a>
+            <a href="">Bottoms</a>
+            <a href="">Shoes</a>
+            <a href="">Accesories</a>
+          </Col>
+          <Col lg={2} className='nav-col small-size'>
+            <a href="/SignIn">Sign in</a> 
+            <a href="/SignUp">Sign up</a>
+          </Col>
+        </Row>
+      </Container>
+    </section>
   )
 }
 

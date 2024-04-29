@@ -1,0 +1,22 @@
+.navBar{
+    background-color: #1A1A1A;
+    .navBar-row {
+        padding: 5px 0px;
+        a {
+            color: #F2D3D3;
+            text-decoration: none;
+        }
+
+        .nav-col {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: space-evenly;
+        
+            img {
+                width: 4.5vw;
+            }
+        }
+    }
+}

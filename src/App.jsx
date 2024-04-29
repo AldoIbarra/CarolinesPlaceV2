@@ -8,17 +8,17 @@ import Banner from './components/Banner/Banner'
 
 function App() {
   return (
-    <>
-    <NavBar/>
-    <Banner/>
-    <Container>
-      <Row>
-        <Col lg={12}>
-          <img src={SecondBanner} alt="Second Banner" />
-        </Col>
-      </Row>
-    </Container>
-    </>
+    <section className='home-Section'>
+      <NavBar/>
+      <Banner/>
+      <Container>
+        <Row>
+          <Col lg={12}>
+            <img src={SecondBanner} alt="Second Banner" />
+          </Col>
+        </Row>
+      </Container>
+    </section>
   )
 }
 
