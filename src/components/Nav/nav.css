@@ -1,0 +1,29 @@
+.nav-navBar{
+    background-color: #1A1A1A;
+}
+
+.nav-navBar a{
+    color: #F2D3D3;
+    text-decoration: none;
+}
+
+.nav-navBar .texts{
+    margin-top: 20px;
+}
+
+.nav-col{
+    margin-top: 15px !important;
+    margin-bottom: 15px;
+}
+
+.nav-col img{
+    max-width: 40px;
+}
+
+.nav-navBar .nav-col:nth-child(2) a{
+    margin: 0px 30px 0px 30px;
+}
+
+.nav-navBar .nav-col:nth-child(3) a{
+    margin: 0px 10px 0px 10px;
+}

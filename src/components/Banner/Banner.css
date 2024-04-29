@@ -1,0 +1,66 @@
+.banner{
+    background-color: black;
+}
+
+.discount-col{
+    display: flex;
+    margin-top: -20px;
+}
+
+.discount-col span{
+    display: grid;
+    margin-left: 5px;
+}
+
+.discount-col span:nth-child(2){
+    margin-top: -25px;
+}
+
+.discount-col span:first-child{
+    margin-top: 45px;
+}
+
+.free-col{
+    display: flex;
+}
+
+.free-col img{
+    min-width: 109px;
+}
+
+.free-col div:first-child{
+    margin-top: 60px;
+    margin-left: -5px;
+}
+
+.free-col div:nth-child(2){
+    display: grid !important;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.free-col div:nth-child(2) span:first-child{
+    margin-top: 15px;
+}
+
+.free-col div:nth-child(2) span:nth-child(2){
+    margin-top: -65px;
+}
+
+.free-col div:nth-child(2) img{
+    margin-top: -50px;
+    margin-left: 10px;
+}
+
+.know-col div a{
+    display: flex;
+    text-decoration: underline white;
+    align-items: center;
+    justify-content: center;
+    margin-top: 55px;
+}
+
+.know-col img{
+    max-width: 50px;
+    margin-left: 5px;
+}

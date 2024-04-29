@@ -1,0 +1,54 @@
+.SignInContainer{
+    background-color: #030305;
+}
+
+.SignIn{
+    display: ruby;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.SignIn h1{
+    margin-top: 50px;
+}
+
+.SignIn form{
+    background-color: #090909;
+    padding: 25px;
+    border-radius: 10px;
+    display: grid;
+    max-width: 300px;
+    margin-top: 30px;
+}
+
+.SignIn form label{
+    text-align: start;
+}
+
+.SignIn form input{
+    background-color: #030305;
+    border: 0.5px solid #F2D3D3;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    min-width: 70%;
+    color: white;
+}
+
+.SignIn form input:focus{
+    outline: 0;
+}
+
+.SignIn form button{
+    margin-top: 20px;
+    max-width: 80%;
+    min-width: 70%;
+    min-height: 45px;
+    background-color: #F2D3D3;
+    border: none;
+    border-radius: 10px;
+}
+
+.SignIn form span{
+    text-align: center;
+}
