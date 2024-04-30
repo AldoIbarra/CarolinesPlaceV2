@@ -1,0 +1,33 @@
+.products-section{
+    background-color: black;
+    .products-title{
+        color: #F2D3D3;
+        padding: 15px 0px;
+    }
+    .products-content{
+        .product{
+            padding: 15px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            .prices{
+                display: flex;
+                align-items: center;
+                h3{
+                    font-size: 20px;
+                }
+                h4{
+                    font-size: 15px;
+                    color: red;
+                    text-decoration: line-through;
+                }
+            }
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

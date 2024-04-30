@@ -1,0 +1,33 @@
+.products-section {
+  background-color: black;
+}
+.products-section .products-title {
+  color: #F2D3D3;
+  padding: 15px 0px;
+}
+.products-section .products-content .product {
+  padding: 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.products-section .products-content .product .prices {
+  display: flex;
+  align-items: center;
+}
+.products-section .products-content .product .prices h3 {
+  font-size: 20px;
+}
+.products-section .products-content .product .prices h4 {
+  font-size: 15px;
+  color: red;
+  text-decoration: line-through;
+}
+.products-section .products-content .product:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=products.css.map */

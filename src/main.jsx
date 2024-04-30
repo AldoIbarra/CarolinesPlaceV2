@@ -5,6 +5,7 @@ import NavBar from './components/Nav/NavBar.jsx'
 import Banner from './components/Banner/Banner.jsx'
 import SignIn from './pages/SignIn/SignIn.jsx'
 import SignUp from './pages/SignUp/SignUp.jsx'
+import Products from './pages/Products/Products.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "SignUp",
     element: <SignUp/>
+  },
+  {
+    path: "Products",
+    element: <Products/>
   }
 ]);
 
