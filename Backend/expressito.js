@@ -53,25 +53,43 @@ app.get("/Usuarios", async (req, res) => {
     }
 });
 
+
+// Select para el carrito
+app.get("/Carrito/:id", async (req, res) => {
+  try {
+      const id_user = req.params.id
+      const Lista = await getListaCarrito(id_user);
+      res.send(Lista);
+  } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al obtener lista');
+  }
+});
+
 //Select donde el email y pass coincida, si encuentra algo 200, si no 403
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   try {
-      const usuario = await getUsuarioLogin(email, password);
-      if (usuario && Object.keys(usuario).length !== 0) {
-          req.session.usuarioId = usuario[0].id_user; 
-          req.session.tipo = usuario[0].Tipo;
-          console.log("ID de usuario en sesión:", req.session.usuarioId);
-          console.log("Tipo de usuario en sesión:", req.session.tipo);
-          res.status(200).send(usuario);
-      } else {
-          res.status(403).send('Credenciales incorrectas');
-      }
+    const usuario = await getUsuarioLogin(email, password);
+    if (usuario && Object.keys(usuario).length !== 0) {
+      req.session.usuarioId = usuario[0].id_user; 
+      req.session.tipo = usuario[0].Tipo;
+      console.log("ID de usuario en sesión:", req.session.usuarioId);
+      console.log("Tipo de usuario en sesión:", req.session.tipo);
+      // Envía las variables de sesión como parte de la respuesta
+      res.status(200).json({
+        usuarioId: req.session.usuarioId,
+        tipo: req.session.tipo
+      });
+    } else {
+      res.status(403).send('Credenciales incorrectas');
+    }
   } catch (error) {
-      console.error(error);
-      res.status(500).send('Error al iniciar sesión');
+    console.error(error);
+    res.status(500).send('Error al iniciar sesión');
   }
 });
+
 
 
 app.post("/signup", async (req, res) => {

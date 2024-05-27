@@ -43,17 +43,17 @@ export async function getListaCarrito(id_user){
 const Usuario = await getUsuario(2);
 console.log(Usuario);
 
-const Lista = await getListaCarrito(2);
-console.log(Lista);
 
 
 
+const Usuarios = await getUsuarioLogin('p@p.com', 'p');
+console.log(Usuarios);
 
 const result = await insertUsuario('ert2','ert2','jert2',null, 'Comprador'); 
 console.log(result);
 */
 
-const Usuarios = await getUsuarioLogin('p@p.com', 'p');
-console.log(Usuarios);
 
+const Lista = await getListaCarrito(1);
+console.log(Lista);
 

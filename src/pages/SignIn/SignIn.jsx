@@ -14,27 +14,32 @@ function SignIn() {
     const [password, setPassword] = useState('');
   
     const handleSignIn = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await response.json(); // Parsea la respuesta JSON
-    console.log('Respuesta del servidor:', data);
-    // Verifica si la sesión se estableció correctamente
-    if (response.ok) {
-      console.log('Login exitoso');
-    } else {
-      console.error('Login fallido');
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-};
+      e.preventDefault();
+      try {
+        const response = await fetch('http://localhost:3000/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        });
+        const data = await response.json(); // Parsea la respuesta JSON
+        console.log('Respuesta del servidor:', data);
+    
+        // Verifica si la sesión se estableció correctamente
+        if (response.ok) {
+          // Accede a las variables de sesión recibidas y muéstralas en la consola
+          console.log('ID de usuario en sesión:', data.usuarioId);
+          console.log('Tipo de usuario en sesión:', data.tipo);
+          console.log('Login exitoso');
+        } else {
+          console.error('Login fallido');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    
 
     
     return (
