@@ -7,12 +7,9 @@ DROP PROCEDURE IF EXISTS  DML_User $$
 CREATE PROCEDURE DML_User(
     op VARCHAR(2),
     pid_user INT,
-    pNombre VARCHAR(80),
     pNombreUsuario VARCHAR(80),
     pEmail VARCHAR(50),
     pContraseña VARCHAR(30),
-    pSexo VARCHAR(30),
-	pimg MEDIUMBLOB,
     pFecha_Nac date,
     pTipo varchar (20)
 )
@@ -23,8 +20,8 @@ BEGIN
     IF op = 'I' THEN
         SET user_exist = (SELECT COUNT(*) FROM Usuarios WHERE Email = pEmail);
         IF user_exist = 0 THEN
-            INSERT INTO Usuarios (Nombre, NombreUsuario, Email, Contraseña, Sexo,  img, Fecha_Nac, Tipo  )
-            VALUES (pNombre, pNombreUsuario, pEmail, pContraseña, pSexo, pimg, pFecha_Nac, pTipo);
+            INSERT INTO Usuarios (NombreUsuario, Email, Contraseña, Fecha_Nac, Tipo  )
+            VALUES (pNombreUsuario, pEmail, pContraseña, pFecha_Nac, pTipo);
             SET id = LAST_INSERT_ID();
         ELSE
             SET id = 0;
@@ -35,7 +32,7 @@ BEGIN
     IF op = 'S' THEN
         SET user_exist = (SELECT COUNT(*) FROM Usuarios WHERE Email = pEmail AND Contraseña = pContraseña);
         IF user_exist > 0 THEN
-            SELECT id_user,Tipo, Email, img, Fecha_Nac, NombreUsuario, Nombre FROM Usuarios WHERE Email = pEmail AND Contraseña = pContraseña;
+            SELECT id_user,Tipo, Email Fecha_Nac, NombreUsuario FROM Usuarios WHERE Email = pEmail AND Contraseña = pContraseña;
          
         ELSE
             SET id = 0;
@@ -45,7 +42,7 @@ BEGIN
     
      IF op = 'QP' THEN
       
-            SELECT id_user,Tipo, Email, Fecha_Nac, NombreUsuario, Nombre FROM Usuarios WHERE Email = pEmail AND Contraseña = pContraseña;
+            SELECT id_user,Tipo, Email, Fecha_Nac, NombreUsuario FROM Usuarios WHERE Email = pEmail AND Contraseña = pContraseña;
 	
     END IF;
     
@@ -53,7 +50,7 @@ BEGIN
     
      IF op = 'S2' THEN
        
-            SELECT id_user,Tipo, Contraseña, Sexo , Fecha_Creacion, Email,img, Fecha_Nac, Nombre, NombreUsuario
+            SELECT id_user,Tipo, Contraseña,Fecha_Creacion, Email, Fecha_Nac, NombreUsuario
             FROM  Usuarios WHERE  id_user = pid_user ;
   
     END IF;
@@ -61,14 +58,14 @@ BEGIN
         
      IF op = 'SS' THEN
        
-            SELECT id_user, Nombre, NombreUsuario,Tipo, Contraseña, Sexo , Fecha_Creacion, Email,img, Fecha_Nac
+            SELECT id_user, NombreUsuario,Tipo, Contraseña, Fecha_Creacion, Email, Fecha_Nac
             FROM  Usuarios  ;
   
     END IF;
     
       IF op = 'XD' THEN
        
-            SELECT id_user,Tipo, Contraseña, Sexo , Fecha_Creacion, Email,img, Fecha_Nac, Nombre, NombreUsuario FROM Usuarios WHERE  Email = pEmail ;
+            SELECT id_user,Tipo, Contraseña , Fecha_Creacion, Email, Fecha_Nac, NombreUsuario FROM Usuarios WHERE  Email = pEmail ;
   
     END IF;
     
@@ -86,23 +83,23 @@ BEGIN
         
         
           IF op = 'X2' THEN
-            SELECT id_user,Tipo, Email,img, Fecha_Nac, Nombre, NombreUsuario FROM Usuarios WHERE Email = pEmail;
+            SELECT id_user,Tipo, Email, Fecha_Nac,NombreUsuario FROM Usuarios WHERE Email = pEmail;
         END IF;
         
           IF op = 'YO' THEN
-            SELECT id_user,Tipo, Email,img, Fecha_Nac, Nombre, NombreUsuario FROM Usuarios WHERE Tipo = 'Usuario';
+            SELECT id_user,Tipo, Email, Fecha_Nac, NombreUsuario FROM Usuarios WHERE Tipo = 'Usuario';
         END IF;
 
  If op = 'UP' then 
 
-			Update Usuarios set Nombre = pNombre, NombreUsuario = pNombreUsuario, Email = pEmail, Sexo = pSexo, Fecha_Nac = pFecha_Nac, img = pimg
+			Update Usuarios set NombreUsuario = pNombreUsuario, Email = pEmail, Fecha_Nac = pFecha_Nac
             WHERE id_user = pid_user;
 End IF;
 
 
  If op = 'U4' then 
 
-			Update Usuarios set Nombre = pNombre, NombreUsuario = pNombreUsuario, Email = pEmail, Sexo = pSexo, Fecha_Nac = pFecha_Nac
+			Update Usuarios set NombreUsuario = pNombreUsuario, Email = pEmail, Fecha_Nac = pFecha_Nac
             WHERE id_user = pid_user;
 End IF;
 
