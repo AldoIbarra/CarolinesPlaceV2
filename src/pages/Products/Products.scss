@@ -1,32 +1,43 @@
 .products-section{
     background-color: black;
+    padding: 0px 0px 70px 0px;
     .products-title{
         color: #F2D3D3;
         padding: 15px 0px;
     }
     .products-content{
-        .product{
-            padding: 15px;
-            background-color: white;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: center;
-            align-items: center;
-            .prices{
+        .product-container{
+            //background: red;
+            margin: 10px 0px;
+            .product{
                 display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
                 align-items: center;
-                h3{
-                    font-size: 20px;
+                img{
+                    max-width: 100%;
+                    object-fit: cover;
+                    margin: 0px;
                 }
-                h4{
-                    font-size: 15px;
-                    color: red;
-                    text-decoration: line-through;
+                h2{
+                    color: white;
                 }
-            }
-            &:hover{
-                cursor: pointer;
+                .prices{
+                    display: flex;
+                    align-items: center;
+                    h3{
+                        color: white;
+                        font-size: 20px;
+                    }
+                    h4{
+                        font-size: 15px;
+                        color: red;
+                        text-decoration: line-through;
+                    }
+                }
+                &:hover{
+                    cursor: pointer;
+                }
             }
         }
     }

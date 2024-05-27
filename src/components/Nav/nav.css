@@ -1,5 +1,6 @@
 .navBar {
   background-color: #1A1A1A;
+  height: 10vh;
 }
 .navBar .navBar-row {
   padding: 5px 0px;

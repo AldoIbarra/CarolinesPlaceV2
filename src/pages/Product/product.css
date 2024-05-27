@@ -1,0 +1,30 @@
+.product-section {
+  height: 90vh;
+}
+.product-section .productContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.product-section .productContent .productInfo .productButtons {
+  display: flex;
+}
+.product-section .productContent .productInfo .productButtons button {
+  background-color: #F2D3D3;
+  border: none;
+  border-radius: 10px;
+}
+.product-section .productContent .productInfo .productButtons button:first-child {
+  padding: 5px 15px;
+}
+.product-section .productContent .productInfo .productButtons button:nth-child(2) {
+  padding: 5px;
+}
+.product-section .productContent .productInfo .productButtons button:nth-child(2) img {
+  width: 50px;
+  height: 50px;
+}
+
+/*# sourceMappingURL=Product.css.map */

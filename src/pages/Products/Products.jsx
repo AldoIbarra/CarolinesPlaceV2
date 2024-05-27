@@ -20,8 +20,8 @@ function Products() {
                 </Col>
               </Row>
               <Row className='products-content'>
-                <Col lg={4} className='product'>
-                    <div>
+                <Col lg={4} className='product-container'>
+                    <div className='product'>
                       <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
                         <div className='prices'>
@@ -30,9 +30,9 @@ function Products() {
                         </div>
                     </div>
                 </Col>
-                <Col lg={4} className='product'>
-                    <div>
-                        <img src={Product} alt="Carolines Logo" />
+                <Col lg={4} className='product-container'>
+                    <div className='product'>
+                      <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
                         <div className='prices'>
                             <h3>$20</h3>
@@ -40,9 +40,9 @@ function Products() {
                         </div>
                     </div>
                 </Col>
-                <Col lg={4} className='product'>
-                    <div>
-                        <img src={Product} alt="Carolines Logo" />
+                <Col lg={4} className='product-container'>
+                    <div className='product'>
+                      <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
                         <div className='prices'>
                             <h3>$20</h3>
@@ -50,9 +50,9 @@ function Products() {
                         </div>
                     </div>
                 </Col>
-                <Col lg={4} className='product'>
-                    <div>
-                        <img src={Product} alt="Carolines Logo" />
+                <Col lg={4} className='product-container'>
+                    <div className='product'>
+                      <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
                         <div className='prices'>
                             <h3>$20</h3>
@@ -60,9 +60,9 @@ function Products() {
                         </div>
                     </div>
                 </Col>
-                <Col lg={4} className='product'>
-                    <div>
-                        <img src={Product} alt="Carolines Logo" />
+                <Col lg={4} className='product-container'>
+                    <div className='product'>
+                      <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
                         <div className='prices'>
                             <h3>$20</h3>
@@ -70,9 +70,9 @@ function Products() {
                         </div>
                     </div>
                 </Col>
-                <Col lg={4} className='product'>
-                    <div>
-                        <img src={Product} alt="Carolines Logo" />
+                <Col lg={4} className='product-container'>
+                    <div className='product'>
+                      <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
                         <div className='prices'>
                             <h3>$20</h3>

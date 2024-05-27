@@ -6,6 +6,7 @@ import Banner from './components/Banner/Banner.jsx'
 import SignIn from './pages/SignIn/SignIn.jsx'
 import SignUp from './pages/SignUp/SignUp.jsx'
 import Products from './pages/Products/Products.jsx'
+import Product from './pages/Product/Product.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "Products",
     element: <Products/>
+  },
+  {
+    path: "Product",
+    element: <Product/>
   }
 ]);
 

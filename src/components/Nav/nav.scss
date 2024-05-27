@@ -1,9 +1,13 @@
+$CarolinesPink: #F2D3D3;
+
+
 .navBar{
     background-color: #1A1A1A;
+    height: 10vh;
     .navBar-row {
         padding: 5px 0px;
         a {
-            color: #F2D3D3;
+            color: $CarolinesPink;
             text-decoration: none;
         }
 

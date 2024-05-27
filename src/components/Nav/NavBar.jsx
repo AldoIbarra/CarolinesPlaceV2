@@ -14,10 +14,10 @@ function NavBar() {
             <a href="/"><img src={CarolinesLogo} alt="Carolines Logo" /></a>
           </Col>
           <Col lg={8} className='lancelot nav-col medium-size'>
-            <a href="">Tops</a>
-            <a href="">Bottoms</a>
-            <a href="">Shoes</a>
-            <a href="">Accesories</a>
+            <a href="/Products">Tops</a>
+            <a href="/Products">Bottoms</a>
+            <a href="/Products">Shoes</a>
+            <a href="/Products">Accesories</a>
           </Col>
           <Col lg={2} className='nav-col small-size'>
             <a href="/SignIn">Sign in</a> 
