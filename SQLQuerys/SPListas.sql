@@ -8,16 +8,15 @@ CREATE PROCEDURE DML_Listas(
     pid_Lista INT,
     pNombreLista VARCHAR(80),
     pDescripcionLista VARCHAR(300),
-	pUsua_Id  int,
-    pMostrar  BOOL
+	pUsua_Id  int
 )
 BEGIN
 
 
     IF op = 'I' THEN
       
-            INSERT INTO Listas (NombreLista, DescripcionLista , Usua_Id, Mostrar)
-            VALUES (pNombreLista, pDescripcionLista, pUsua_Id, pMostrar);
+            INSERT INTO Listas (NombreLista, DescripcionLista , Usua_Id)
+            VALUES (pNombreLista, pDescripcionLista, pUsua_Id);
 
     END IF;
     
@@ -25,21 +24,6 @@ BEGIN
       
            delete from Listas where id_Lista = pid_Lista;
 
-    END IF;
-    
-    
-            IF op = 'U1' THEN
-      
-      UPDATE Listas SET Mostrar = 1
-       WHERE id_Lista = pid_Lista;
-       
-    END IF;
-    
-             IF op = 'U2' THEN
-      
-      UPDATE Listas SET Mostrar = 0
-       WHERE id_Lista = pid_Lista;
-       
     END IF;
     
     
@@ -51,7 +35,7 @@ BEGIN
     
           IF op = 'S3' THEN
        
-           SELECT NombreLista, DescripcionLista, Usua_Id, id_Lista, Mostrar  FROM Listas where NombreLista LIKE CONCAT('%', pNombreLista, '%')  AND NOT NombreLista = 'Carrito';
+           SELECT NombreLista, DescripcionLista, Usua_Id, id_Lista FROM Listas where NombreLista LIKE CONCAT('%', pNombreLista, '%')  AND NOT NombreLista = 'Carrito';
   
     END IF;
 
@@ -59,14 +43,7 @@ BEGIN
     
      IF op = 'S2' THEN
        
-            SELECT id_Lista, NombreLista, DescripcionLista, Usua_Id, Mostrar FROM Listas WHERE  Usua_Id = pUsua_Id AND NOT NombreLista = 'Carrito';
-  
-    END IF;
-    
-        IF op = 'AP' THEN
-       
-            SELECT id_Lista, NombreLista, DescripcionLista, Usua_Id FROM Listas WHERE  Usua_Id = pUsua_Id AND NOT NombreLista = 'Carrito' 
-            AND Mostrar = 1;
+            SELECT id_Lista, NombreLista, DescripcionLista, Usua_Id FROM Listas WHERE  Usua_Id = pUsua_Id AND NOT NombreLista = 'Carrito';
   
     END IF;
     
@@ -83,7 +60,7 @@ BEGIN
      IF op = 'S9' THEN
        
             
-            SELECT id_Lista, NombreLista, DescripcionLista, Usua_Id FROM vwListas WHERE id_Lista = pid_Lista ;
+            SELECT id_Lista, NombreLista, DescripcionLista, Usua_Id FROM Listas WHERE id_Lista = pid_Lista ;
   
     END IF;
     
@@ -100,3 +77,6 @@ BEGIN
 END $$
 DELIMITER ;
 
+
+
+CALL DML_Listas('I',null,'Carrito','cosas pa mi cumple',1);
