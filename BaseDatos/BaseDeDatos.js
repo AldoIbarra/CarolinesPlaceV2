@@ -32,19 +32,28 @@ export async function getUsuarioLogin(Email, Contraseña) {
     }
 }
 
+export async function getListaCarrito(id_user){
+    const [rows]= await pool.query("CALL DML_Listas('W',null,'','',?);",[id_user]);
+    return rows[0];
+}
+
 /*
+
 
 const Usuario = await getUsuario(2);
 console.log(Usuario);
 
+const Lista = await getListaCarrito(2);
+console.log(Lista);
 
 
-const Usuarios = await getUsuarioLogin('p@p.com', 'p');
-console.log(Usuarios);
+
 
 const result = await insertUsuario('ert2','ert2','jert2',null, 'Comprador'); 
 console.log(result);
 */
 
+const Usuarios = await getUsuarioLogin('p@p.com', 'p');
+console.log(Usuarios);
 
 

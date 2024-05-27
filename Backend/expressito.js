@@ -1,5 +1,6 @@
 import express from "express";
 import morgan from "morgan";
+import session from "express-session";
 
 import cors from "cors";
 import{getUsuarios, getUsuario, insertUsuario, getUsuarioLogin} from '../BaseDatos/BaseDeDatos.js';
@@ -9,16 +10,25 @@ const app = express();
 
 // Habilitar CORS para todas las solicitudes
 app.use(cors({
-    origin: 'http://localhost:5173'
+    origin: 'http://localhost:5173',
+         credentials: true
   }));
 
 app.use(morgan('dev'));
 app.use(express.json());
 
+app.use(session({
+  secret: '123', 
+  resave: false,
+  saveUninitialized: true
+}));
+
 
 app.get("/", (req, res) => {
-    res.send("Hey que tal");
+console.log(req.session)
+    res.send(`Hey que tal${req.session.usuario}--${req.session.tipo}`);
 });
+
 
 // Select para los datos de un usuario
 app.get("/Usuarios/:id", async (req, res) => {
@@ -45,19 +55,24 @@ app.get("/Usuarios", async (req, res) => {
 
 //Select donde el email y pass coincida, si encuentra algo 200, si no 403
 app.post("/login", async (req, res) => {
-    const { email, password } = req.body;
-    try {
-        const usuario = await getUsuarioLogin(email, password);
-        if (usuario && Object.keys(usuario).length !== 0) {
-            res.status(200).send(usuario);
-        } else {
-            res.status(403).send('Credenciales incorrectas');
-        }
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error al iniciar sesión');
-    }
+  const { email, password } = req.body;
+  try {
+      const usuario = await getUsuarioLogin(email, password);
+      if (usuario && Object.keys(usuario).length !== 0) {
+          req.session.usuarioId = usuario[0].id_user; 
+          req.session.tipo = usuario[0].Tipo;
+          console.log("ID de usuario en sesión:", req.session.usuarioId);
+          console.log("Tipo de usuario en sesión:", req.session.tipo);
+          res.status(200).send(usuario);
+      } else {
+          res.status(403).send('Credenciales incorrectas');
+      }
+  } catch (error) {
+      console.error(error);
+      res.status(500).send('Error al iniciar sesión');
+  }
 });
+
 
 app.post("/signup", async (req, res) => {
     const { nombreUsuario, email, contraseña, fechaNac, tipo } = req.body;

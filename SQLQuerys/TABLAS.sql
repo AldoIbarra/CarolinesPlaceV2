@@ -5,18 +5,23 @@ USE PrograWeb2;
 
 CREATE TABLE Usuarios(
 id_user int not null auto_increment COMMENT 'Identificador unico de cada usuario',
-Nombre varchar (80) not null COMMENT 'Nombre completo del usuario', 
 NombreUsuario varchar (80) not null COMMENT 'Nombre de usuario',  
 Email varchar (50) not null COMMENT 'Email del usuario',
 Contraseña varchar (30) not null COMMENT 'Contraseña del usuario',
-Sexo varchar (30) not null COMMENT 'Sexo o Genero del usuario',
-img MEDIUMBLOB NOT NULL COMMENT 'Imagen de avatar del usuario',
 Fecha_Nac date COMMENT 'Fecha de nacimiento del usuario',
 Fecha_Creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Fecha de creacion del usuario',
 Tipo varchar (20) not null COMMENT 'Tipo de usuario, Vendedor o Comprador',
 primary key (id_user)
 );
 
+drop TABLE Productos_Ventas;
+drop TABLE Ventas;
+drop TABLE ListasProductos;
+drop TABLE Listas;
+drop TABLE Productos;
+drop table Categoria;
+drop table Usuarios;
+select * from Usuarios;
 
   CREATE TABLE Categoria(
   id_Categoria int not null auto_increment COMMENT 'Identificador unico de la categoria',
@@ -52,7 +57,7 @@ CONSTRAINT FK_Id_usuario FOREIGN KEY (user_ide) REFERENCES Usuarios(id_user)
   CONSTRAINT FK_Id_Us FOREIGN KEY (Usua_Id) REFERENCES Usuarios(id_user)
   );
   
-    
+    select * from Listas;
     
     CREATE TABLE ListasProductos(
   id_ListasProductos int not null auto_increment COMMENT 'Identificador unico de cada producto de la lista',
