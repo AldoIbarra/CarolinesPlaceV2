@@ -23,8 +23,8 @@ BEGIN
     IF op = 'I' THEN
         SET user_exist = (SELECT COUNT(*) FROM Usuarios WHERE Email = pEmail);
         IF user_exist = 0 THEN
-            INSERT INTO Usuarios (Nombre, NombreUsuario, Email, Contraseña, Sexo,  img, Fecha_Nac, Publico, Tipo  )
-            VALUES (pNombre, pNombreUsuario, pEmail, pContraseña, pSexo, pimg, pFecha_Nac, 1, pTipo);
+            INSERT INTO Usuarios (Nombre, NombreUsuario, Email, Contraseña, Sexo,  img, Fecha_Nac, Tipo  )
+            VALUES (pNombre, pNombreUsuario, pEmail, pContraseña, pSexo, pimg, pFecha_Nac, pTipo);
             SET id = LAST_INSERT_ID();
         ELSE
             SET id = 0;
@@ -44,14 +44,9 @@ BEGIN
     END IF;
     
      IF op = 'QP' THEN
-        SET user_exist = (SELECT COUNT(*) FROM Usuarios WHERE Email = pEmail AND Contraseña = pContraseña);
-        IF user_exist > 0 THEN
+      
             SELECT id_user,Tipo, Email, Fecha_Nac, NombreUsuario, Nombre FROM Usuarios WHERE Email = pEmail AND Contraseña = pContraseña;
-         
-        ELSE
-            SET id = 0;
-            SELECT id;
-        END IF;
+	
     END IF;
     
     
@@ -59,7 +54,15 @@ BEGIN
      IF op = 'S2' THEN
        
             SELECT id_user,Tipo, Contraseña, Sexo , Fecha_Creacion, Email,img, Fecha_Nac, Nombre, NombreUsuario
-            FROM vwUsuario WHERE  id_user = pid_user ;
+            FROM  Usuarios WHERE  id_user = pid_user ;
+  
+    END IF;
+    
+        
+     IF op = 'SS' THEN
+       
+            SELECT id_user, Nombre, NombreUsuario,Tipo, Contraseña, Sexo , Fecha_Creacion, Email,img, Fecha_Nac
+            FROM  Usuarios  ;
   
     END IF;
     
@@ -117,4 +120,6 @@ End IF;
 
 END $$
 DELIMITER ;
+
+
 
