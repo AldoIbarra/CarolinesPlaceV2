@@ -9,34 +9,37 @@
         .product-container{
             //background: red;
             margin: 10px 0px;
-            .product{
-                display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
-                align-items: center;
-                img{
-                    max-width: 100%;
-                    object-fit: cover;
-                    margin: 0px;
-                }
-                h2{
-                    color: white;
-                }
-                .prices{
+            a{
+                text-decoration: none;
+                .product{
                     display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
                     align-items: center;
-                    h3{
+                    img{
+                        max-width: 100%;
+                        object-fit: cover;
+                        margin: 0px;
+                    }
+                    h2{
                         color: white;
-                        font-size: 20px;
                     }
-                    h4{
-                        font-size: 15px;
-                        color: red;
-                        text-decoration: line-through;
+                    .prices{
+                        display: flex;
+                        align-items: center;
+                        h3{
+                            color: white;
+                            font-size: 20px;
+                        }
+                        h4{
+                            font-size: 15px;
+                            color: red;
+                            text-decoration: line-through;
+                        }
                     }
-                }
-                &:hover{
-                    cursor: pointer;
+                    &:hover{
+                        cursor: pointer;
+                    }
                 }
             }
         }

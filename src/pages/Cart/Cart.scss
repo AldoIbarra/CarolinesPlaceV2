@@ -1,0 +1,55 @@
+$CarolinesPink: #F2D3D3;
+
+.cart-section{
+    padding: 20px 0px;
+    .title{
+        h1{
+            font-size: 4vw;
+        }
+    }
+    .content{
+        .cartProduct{
+            background-color: rgba(242, 211, 211, 0.5);
+            padding: 10px 20px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            border-radius: 10px;
+            margin: 5px 0px;
+            .cartProduct-leftPart{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                img{
+                    width: 15vw;
+                    height: 30vh;
+                    object-fit: cover;
+                }
+                .product-Info{
+                    margin-left: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                }
+            }
+        }
+        .checkout{
+            hr{
+                opacity: 1;
+                height: 1.5px;
+                background-color: black;
+            }
+            background-color: rgba(242, 211, 211, 1);
+            padding: 10px;
+            border-radius: 10px;
+            .subtotal{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+}

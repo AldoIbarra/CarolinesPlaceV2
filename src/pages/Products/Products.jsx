@@ -21,6 +21,7 @@ function Products() {
               </Row>
               <Row className='products-content'>
                 <Col lg={4} className='product-container'>
+                  <a href="/Product">
                     <div className='product'>
                       <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
@@ -29,8 +30,10 @@ function Products() {
                             <h4>$30</h4>
                         </div>
                     </div>
+                  </a>
                 </Col>
                 <Col lg={4} className='product-container'>
+                  <a href="/Product">
                     <div className='product'>
                       <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
@@ -39,8 +42,10 @@ function Products() {
                             <h4>$30</h4>
                         </div>
                     </div>
+                  </a>
                 </Col>
                 <Col lg={4} className='product-container'>
+                  <a href="/Product">
                     <div className='product'>
                       <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
@@ -49,8 +54,10 @@ function Products() {
                             <h4>$30</h4>
                         </div>
                     </div>
+                  </a>
                 </Col>
                 <Col lg={4} className='product-container'>
+                  <a href="/Product">
                     <div className='product'>
                       <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
@@ -59,8 +66,10 @@ function Products() {
                             <h4>$30</h4>
                         </div>
                     </div>
+                  </a>
                 </Col>
                 <Col lg={4} className='product-container'>
+                  <a href="/Product">
                     <div className='product'>
                       <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
@@ -69,8 +78,10 @@ function Products() {
                             <h4>$30</h4>
                         </div>
                     </div>
+                  </a>
                 </Col>
                 <Col lg={4} className='product-container'>
+                  <a href="/Product">
                     <div className='product'>
                       <img src={Product} alt="Carolines Logo" />
                         <h2>Jeans</h2>
@@ -79,6 +90,7 @@ function Products() {
                             <h4>$30</h4>
                         </div>
                     </div>
+                  </a>
                 </Col>
               </Row>
             </Container>

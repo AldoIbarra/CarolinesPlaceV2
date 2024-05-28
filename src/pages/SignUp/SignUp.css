@@ -1,7 +1,6 @@
 .SignUpSection {
   background-color: black;
   padding: 3% 0%;
-  height: 90vh;
 }
 .SignUpSection .SignUp {
   display: flex;

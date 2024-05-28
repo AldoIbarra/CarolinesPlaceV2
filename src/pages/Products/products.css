@@ -9,34 +9,37 @@
 .products-section .products-content .product-container {
   margin: 10px 0px;
 }
-.products-section .products-content .product-container .product {
+.products-section .products-content .product-container a {
+  text-decoration: none;
+}
+.products-section .products-content .product-container a .product {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
 }
-.products-section .products-content .product-container .product img {
+.products-section .products-content .product-container a .product img {
   max-width: 100%;
   object-fit: cover;
   margin: 0px;
 }
-.products-section .products-content .product-container .product h2 {
+.products-section .products-content .product-container a .product h2 {
   color: white;
 }
-.products-section .products-content .product-container .product .prices {
+.products-section .products-content .product-container a .product .prices {
   display: flex;
   align-items: center;
 }
-.products-section .products-content .product-container .product .prices h3 {
+.products-section .products-content .product-container a .product .prices h3 {
   color: white;
   font-size: 20px;
 }
-.products-section .products-content .product-container .product .prices h4 {
+.products-section .products-content .product-container a .product .prices h4 {
   font-size: 15px;
   color: red;
   text-decoration: line-through;
 }
-.products-section .products-content .product-container .product:hover {
+.products-section .products-content .product-container a .product:hover {
   cursor: pointer;
 }
 

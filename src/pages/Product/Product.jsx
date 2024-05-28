@@ -5,10 +5,14 @@ import './product.css'
 import NavBar from '../../components/Nav/NavBar'
 import ProductImg from './Jeans.jpg'
 import HeartImg from './heart.svg'
+import { useNavigate } from "react-router-dom";
 
 
-//Nuevo por Julian
 function Product() {
+  const navigate = useNavigate();
+  const toCart = () => {
+    navigate("/Cart");
+  }
     
     return (
         <>
@@ -25,8 +29,8 @@ function Product() {
                       <h1 className='lancelot'>Jeans</h1>
                       <h1>$300</h1>
                       <div className='productButtons'>
-                        <button>Agregar al carrito</button>
-                        <button><img src={HeartImg} alt="Add to favorites" /></button>
+                        <button onClick={toCart}>Agregar al carrito</button>
+                        <button onClick={toCart}><img src={HeartImg} alt="Add to favorites" /></button>
                       </div>
                     </div>
                   </div>

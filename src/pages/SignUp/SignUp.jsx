@@ -12,6 +12,7 @@ function SignUp() {
   const [tipo, setTipo] = useState('Comprador'); // Valor predeterminado para el tipo de usuario
 
   const handleSignUp = async (e) => {
+    console.log(JSON.stringify({ nombreUsuario, email, contraseña, fechaNac, tipo }));
     e.preventDefault();
     try {
       const response = await fetch('http://localhost:3000/signup', {
