@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp/SignUp.jsx'
 import Products from './pages/Products/Products.jsx'
 import Product from './pages/Product/Product.jsx'
 import Cart from './pages/Cart/Cart.jsx'
+import FavouriteList from './pages/FavouriteList/FavouriteList.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "Cart",
     element: <Cart/>
+  },
+  {
+    path: "FavouriteList",
+    element: <FavouriteList/>
   }
 ]);
 

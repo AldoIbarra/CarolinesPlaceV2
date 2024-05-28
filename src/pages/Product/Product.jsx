@@ -10,6 +10,9 @@ import { useNavigate } from "react-router-dom";
 
 function Product() {
   const navigate = useNavigate();
+  const toFavouriteList = () => {
+    navigate("/FavouriteList");
+  }
   const toCart = () => {
     navigate("/Cart");
   }
@@ -29,8 +32,8 @@ function Product() {
                       <h1 className='lancelot'>Jeans</h1>
                       <h1>$300</h1>
                       <div className='productButtons'>
-                        <button onClick={toCart}>Agregar al carrito</button>
-                        <button onClick={toCart}><img src={HeartImg} alt="Add to favorites" /></button>
+                        <button onClick={toCart}>Add to cart</button>
+                        <button onClick={toFavouriteList}><img src={HeartImg} alt="Add to favorites" /></button>
                       </div>
                     </div>
                   </div>
